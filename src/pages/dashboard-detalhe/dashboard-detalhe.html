@@ -1,0 +1,72 @@
+<ion-header class="bgc-azul">
+  <ion-navbar class="text-center nav-interna">
+    <button class="position-absolute" ion-button (click)="doBack()" style="width:48px;">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <h1>{{selectedItem.cliente.empresa}}</h1>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgc-cinza">
+  <!-- Etapas -->
+  <ion-grid class="bgc-branco">
+    <ion-row align-items-top class="etapas">
+      <ion-col col-4>
+        <div class="item-etapa">
+          <img src="assets/img/icone-local.svg" class="img-border" alt="" *ngIf="selectedItem.status.id <= 5">
+        </div>
+        <p>Check-In</p>
+        <img class="check" src="assets/img/icone-check.png" alt="" *ngIf="selectedItem.status.id <= 5">
+      </ion-col>
+      <ion-col col-4 class="linhas">
+        <div class="item-etapa">
+          <img src="assets/img/icone-arquivo.svg" class="img-border" alt="" *ngIf="selectedItem.status.id > 2 && selectedItem.status.id <= 5">
+        </div>
+        <p>Proposta</p>
+        <img class="check" src="assets/img/icone-check.png" alt="" *ngIf="selectedItem.status.id > 2 && selectedItem.status.id <= 5">
+      </ion-col>
+      <ion-col col-4>
+        <div class="item-etapa">
+          <img src="assets/img/icone-moeda.svg" class="img-border" alt="" *ngIf="selectedItem.status.id == 5">
+        </div>
+        <p>Negócio <br />Fechado</p>
+        <img class="check" src="assets/img/icone-check.png" alt="" *ngIf="selectedItem.status.id == 5">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Lista -->
+  <ion-list class="lista-info overflowY-auto lista-proposta">
+    <ion-item class="no-border">
+      <p>
+        <b>Nome Completo</b> <br />
+        {{selectedItem.cliente.nome}}
+      </p>
+    </ion-item>
+    <ion-item class="no-border">
+      <p>
+        <b>Empresa</b> <br />
+        {{selectedItem.cliente.empresa}}
+      </p>
+    </ion-item>
+    <ion-item class="no-border">
+      <p>
+        <b>Endereço</b> <br />
+        {{selectedItem.cliente.endereco.logradouro}}, {{selectedItem.cliente.endereco.numero}}, {{selectedItem.cliente.endereco.bairro}}, <br/>
+        {{selectedItem.cliente.endereco.cidade.nome}}
+      </p>
+    </ion-item>
+    <ion-item class="no-border">
+      <p>
+        <b>Contato</b> <br />
+        {{selectedItem.cliente.celular}}
+      </p>
+    </ion-item>
+    <ion-item class="no-border">
+      <p>
+        <b>E-mail</b> <br />
+        {{selectedItem.cliente.email}}
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

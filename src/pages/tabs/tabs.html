@@ -1,0 +1,5 @@
+<ion-tabs id="tabs" tabsPlacement="top" class="tabs-game">
+  <ion-tab [root]="tab1Root" tabIcon="dashboard" tabTitle="home"></ion-tab>
+  <ion-tab [root]="tab3Root" tabIcon="quiz" tabTitle="game" tabBadge="{{quizDisponivel}}" (click)="removeTabBadge()"></ion-tab> 
+  <ion-tab [root]="tab5Root" tabIcon="ranking" tabTitle="ranking"></ion-tab> 
+</ion-tabs>

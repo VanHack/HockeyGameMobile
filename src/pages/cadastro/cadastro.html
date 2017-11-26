@@ -1,0 +1,69 @@
+<ion-header class="bgc-azul">
+  <ion-navbar class="text-center">
+  <span class="page-title">Cadastro</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Cadastro Chamada -->
+  <ion-grid  class="cadastro">
+    <ion-row align-items-top>
+      <ion-col col-12>
+
+        <h2>Olá {{usuario?.nome}},</h2>
+        <p>Seja bem-vindo ao Game Conecta. Para continuar com o seu primeiro acesso complete os dados abaixo corretamente.</p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Formulário Cadastro -->
+  <form [formGroup]="form" class="cadastro-form">
+    <ion-list padding class="form-default text-center">
+      <ion-item>
+        <ion-label stacked>Telefone Corporativo</ion-label>
+        <ion-input formControlName="celularCorporativo" type="text" placeholder="(21) 9 9999-9999"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Data</ion-label>
+        <ion-datetime formControlName="dataNascimento" displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" placeholder="00/00/0000"></ion-datetime> <!-- [(ngModel)]="myDate" -->
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Gênero</ion-label>
+        <ion-select formControlName="genero" placeholder="Selecione"> <!-- [(ngModel)]="gaming" -->
+          <ion-option value="M">Masculino</ion-option>
+          <ion-option value="F">Feminino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input formControlName="senha" type="password" placeholder="Nova senha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Confirmar senha</ion-label>
+        <ion-input formControlName="confirmarSenha" type="password" placeholder="Confirmar senha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label for="concordo">Concordo com as cláusulas abaixo:</ion-label>
+        <ion-checkbox id="concordo" (ionChange)="onChange($event)"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class="regulamento">
+        <p>
+          1. Declaro estar ciente de que a minha participação no Game Conecta é facultativa. <br /> <br />
+          2. Autorizo a instalação do aplicativo Game Conecta em meu celular de uso pessoal e/ou de uso corporativo. <br /><br />
+          3. Estou ciente de todas as regras e do regulamento para participação no Game Conecta. <br /><br />
+          4. A etapa de check-in apenas valerá para a pontuação de visitas realizadas dentro do horário comercial, não configurando a existência de meio de controle de jornada de nenhuma espécie (art. 62, I e II da CLT).
+        </p>
+      </ion-item>
+      <button ion-button (click)="cadastrar(form)" class="btn-verde">VAMOS LÁ</button>
+    </ion-list>
+  </form>
+
+</ion-content>

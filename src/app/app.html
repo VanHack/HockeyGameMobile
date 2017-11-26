@@ -1,0 +1,32 @@
+<ion-menu id="myMenu" [content]="content">
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-content class="lista-menu">
+    <ion-list>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages.tabsPage)">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages.perfilPage)">
+        <ion-icon class="icone-embratel icone-user"></ion-icon>
+        Profile
+      </button>
+      <button menuClose ion-item icon-left (click)="linkRegras()"> <!-- (click)="nav.setRoot(pages.regraPage)" -->
+        <ion-icon class="icone-embratel icone-informacao"></ion-icon>
+        Rules
+      </button>
+      <button menuClose ion-item icon-left (click)="logout()">
+        <ion-icon class="icone-embratel icone-sair"></ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus swipeBackEnabled="false"-->
+<ion-nav [root]="rootPage" #content ></ion-nav>

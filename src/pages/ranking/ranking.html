@@ -1,0 +1,66 @@
+<ion-header class="bgc-azul">
+  <ion-navbar class="text-center">
+    <button class="position-absolute" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <img src="assets/img/logo-center.png" alt="">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--<ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.ranking" item-left></ion-icon>
+      {{item.nome}}
+      <div class="item-note" item-right>
+        {{item.pontos}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>-->
+
+  <!-- Header Ranking -->
+  <div class="header-ranking">
+    <ion-grid>
+        <ion-row align-items-end>
+          <ion-col col-8 class="text-center">
+            <div class="user-pontos">
+              <label class="desc pull-left">YOU HAVE</label>
+              <span class="pull-left">{{meusPontos}}</span>
+              <label class="desc pull-right">POINTS</label>
+            </div>
+          </ion-col>
+          <ion-col col-4 class="text-center">
+
+            <div class="user-posicao text-center">
+              <span>{{minhaPosicao}}</span>
+              <label class="desc">POSITION</label>
+            </div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+
+  <!-- Lista Ranking -->
+  <ion-list class="lista-full-ranking">
+    <ion-item *ngFor="let item of items">
+      <ion-grid>
+        <ion-row align-items-center>
+          <ion-col col-8>
+            <span class="posicao">{{item.ranking}}º</span>
+            <ion-title class="nome text-left">{{item.nome}}</ion-title>
+          </ion-col>
+          <ion-col col-4 class="text-right">
+            <div class="pontos">
+              {{item.pontos}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

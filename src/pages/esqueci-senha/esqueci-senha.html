@@ -1,0 +1,24 @@
+<ion-content padding class="modal-padrao">
+    <div class="modal-content">
+        <ion-icon name="arrow-back" (click)="doPageLogin()"></ion-icon>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+            <header>
+                <h2 ion-text class="title" >Forgot your password?</h2>
+                <p>Do not worry, fill in the field below with your email that will solve this =)s</p>
+            </header>
+            <ion-list no-lines>
+                <ion-item>                
+                    <ion-label stacked>E-mail</ion-label>
+                    <ion-input type="email" formControlName="email" placeholder="email@email.com"> </ion-input>                
+                </ion-item>
+                <button ion-button type="submit" class="btn-verde">Send</button>
+                <!--
+                <p ion-text class="text-center">
+                Outros problemas?<a ion-text (click)="doEmailUs()" class="underline"> Nos envie um email.</a>
+                </p>
+                -->
+            </ion-list>
+        </form>
+
+    </div>
+</ion-content>

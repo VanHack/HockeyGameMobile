@@ -1,0 +1,38 @@
+<ion-content padding class="modal-padrao" (click)="doBack()">
+  <div class="modal-content">
+    <!--<ion-icon name="close" (click)="doBack()"></ion-icon>-->
+
+    <!-- MENSAGEM ENVIADA COM SUCESSO -->
+    <div class="text-center sucesso" *ngIf="codigo == 3">
+      <img src="assets/img/icone-check.png" alt="Sucesso">
+      <p class="no-margin-bottom">
+        The email has been sent!
+      </p>
+    </div>
+
+    <div class="text-center sucesso" *ngIf="codigo == 4">
+      <img src="assets/img/icone-check-pontos.png" alt="Sucesso">
+      <p class="no-margin-bottom">
+        Correct! <br />
+        You earned <b>1 point</b>
+      </p>
+    </div>
+
+    <div class="text-center sucesso" *ngIf="codigo == 5">
+      <img src="assets/img/icone-erro.png" alt="Resposta errada">
+      <p class="no-margin-bottom">
+        Wrong...
+      </p>
+    </div>
+
+
+    <div class="text-center sucesso" *ngIf="codigo == 6">
+      <img src="assets/img/icone-check.png" alt="Sucesso">
+      <p class="no-margin-bottom">
+        Profile updated with <br />
+        success!
+      </p>
+    </div>
+
+  </div>
+</ion-content>

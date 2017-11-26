@@ -1,0 +1,64 @@
+<ion-header class="bgc-azul">
+  <ion-navbar class="text-center">
+    <button class="position-absolute" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <img src="assets/img/logo-center.png" alt="">
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bgc-cinza">
+
+  <h2 class="title-perguntas" *ngIf="quiz != null">Look at the large LED to see the question number: {{quiz.id}}</h2>
+  
+  <form *ngIf="quiz?.id != null">
+    <ion-list class="lista-perguntas">
+      <ion-item>
+        <!--<input type="radio" id="resposta1" name="opcaoEscolhida" class="input-radio" formControlName="opcaoEscolhida" (ionChange)="onChange('A', $event.checked)">-->
+        <ion-label text-wrap>{{quiz.opcaoA}}</ion-label>
+        <ion-checkbox (ionChange)="onChange('A', $event)"></ion-checkbox> <!-- formControlName="opcaoEscolhida" -->
+      </ion-item>
+      <ion-item>
+        <!--<input type="radio" id="resposta2" name="opcaoEscolhida" class="input-radio" formControlName="opcaoEscolhida" (ionChange)="onChange('B', $event.checked)">-->
+        <ion-label text-wrap>{{quiz.opcaoB}}</ion-label>
+        <ion-checkbox (ionChange)="onChange('B', $event)"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <!--<input type="radio" id="resposta3" name="opcaoEscolhida" class="input-radio" formControlName="opcaoEscolhida" (ionChange)="onChange('C', $event.checked)">-->
+        <ion-label text-wrap>{{quiz.opcaoC}}</ion-label>
+        <ion-checkbox (ionChange)="onChange('C', $event)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button (click)="onSubmit()" class="btn-verde align-center block">Answer</button>
+  </form> 
+
+  <br />
+  <h2 *ngIf="quiz == null" class="sem-perguntas">Wait for the next question :)</h2>
+  <br />
+  <button ion-button *ngIf="quiz == null" (click)="refresh()" class="btn-verde align-center block">Refresh</button>
+</ion-content>
+
+<!--
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-list>
+      
+      <h3 class="text-center">{{quiz.descricao}}</h3>
+      
+      <ion-item>
+        <ion-label text-wrap>{{quiz.opcaoA}}</ion-label>
+        <ion-checkbox formControlName="opcaoEscolhida" (ionChange)="onChange('A', $event.checked)"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>{{quiz.opcaoB}}</ion-label>
+        <ion-checkbox formControlName="opcaoEscolhida" (ionChange)="onChange('B', $event.checked)"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>{{quiz.opcaoC}}</ion-label>
+        <ion-checkbox formControlName="opcaoEscolhida" (ionChange)="onChange('C', $event.checked)"></ion-checkbox>
+      </ion-item>
+      <button ion-button (click)="onSubmit(form)" block>RESPONDER</button>
+    </ion-list>
+  </form>
+</ion-content> -->

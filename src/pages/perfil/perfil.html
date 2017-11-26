@@ -1,0 +1,61 @@
+<ion-header class="bgc-azul">
+  <ion-navbar class="text-center nav-interna">
+    <button class="position-absolute" ion-button (click)="doBack()" style="width:48px;">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+  <span class="page-title">Profile</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Cadastro Chamada -->
+  <ion-grid  class="cadastro">
+    <ion-row align-items-top>
+      <ion-col col-12>
+
+        <h2>Hi {{usuario.nome}},</h2>
+        <p>Please update the data below if you wish.</p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Formulário Cadastro -->
+  <!--<form #formData='ngForm' class="cadastro-form"> -->
+    <ion-input type="text" hidden [(ngModel)]="usuario.id" ngControl="id"></ion-input>
+    <ion-list padding class="form-default text-center">
+      <ion-item>
+        <ion-label stacked>Phone</ion-label>
+        <ion-input type="tel" [(ngModel)]="usuario.celularCorporativo" name="celularCorporativo" placeholder="(21) 9 9999-9999"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Birth</ion-label>
+        <ion-datetime [(ngModel)]="usuario.dataNascimento" displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" placeholder="00/00/0000">
+        </ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Gender</ion-label>
+        <ion-select [(ngModel)]="usuario.genero" placeholder="Selecione">
+          <ion-option value="M">Masculino</ion-option>
+          <ion-option value="F">Feminino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input [(ngModel)]="usuario.senha" type="password" placeholder=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Confirm password</ion-label>
+        <ion-input [(ngModel)]="usuario.confirmarSenha" type="password" placeholder=""></ion-input>
+      </ion-item>
+
+        <button ion-button type="submit" (click)="onSubmit()" class="btn-verde">SAVE</button>
+    </ion-list>
+   <!-- </form> -->
+
+</ion-content>

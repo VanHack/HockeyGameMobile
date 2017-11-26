@@ -1,0 +1,23 @@
+<ion-content padding no-bounce class="bg-imagem">
+    <!-- <ion-icon name="arrow-back" color="light" (click)="doBack()"></ion-icon> -->
+
+    <form [formGroup]="form">
+        <ion-list class="form-login">
+            <img src="assets/img/logo-branco.png" class="logo" alt="Game Conecta Logo">
+            <ion-item>                
+                <ion-label stacked>EMAIL</ion-label>
+                <ion-input formControlName="email" type="email" placeholder="example@email.com"></ion-input>                
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>PASSWORD</ion-label>
+                <ion-input formControlName="password" type="password" placeholder="password"></ion-input>
+            </ion-item>
+            
+            
+            <button ion-button class="btn-outline-branco" (click)="doLogin(form)" block>LOGIN</button>
+            <button ion-button (click)="doForgotPassword()" class="esq-senha">I forgot the password</button>
+        </ion-list>
+    </form>
+</ion-content>
+
