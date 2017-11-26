@@ -1,0 +1,12 @@
+{
+  "name": "gameConecta",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [{
+    "path": "/api",
+    "proxyUrl": "http://hockeygameapi.us-east-1.elasticbeanstalk.com"
+  }]
+}
