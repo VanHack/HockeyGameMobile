@@ -4,27 +4,21 @@
 
 ![Alt text](/readme/mobile2.PNG?raw=true "Main image")
 
-## How to use
+## Description
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+This application was built with Ionic Framework. The top open source framework for building mobile apps. This code runs on Android devices and IOS devices.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+## Backend
 
-### With the Ionic CLI:
+This mobile project consumes this API:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+https://github.com/rivanmota/HockeyGameMobileAPI
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start mySideMenu sidemenu
-```
 
-Then, to run it, cd into `mySideMenu` and run:
+### Author
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+Rivan Mota
 
-Substitute ios for android if not on a Mac.
+### Project time
 
+4 days
