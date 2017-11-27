@@ -2,6 +2,7 @@
 
 ![Alt text](/readme/mobile1.PNG?raw=true "Main image")
 
+![Alt text](/readme/mobile2.PNG?raw=true "Main image")
 
 ## How to use
 
